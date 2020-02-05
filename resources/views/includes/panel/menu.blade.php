@@ -4,8 +4,8 @@
       <img src="{{ asset('lte/dist/img/AdminLTELogo.png') }}"
            alt="AdminLTE Logo"
            class="brand-image img-circle elevation-3"
-           style="opacity: .8">
-      <span class="brand-text font-weight-light">AdminLTE 3</span>
+           style="opacity: .9">
+      <span class="brand-text font-weight-light text-white ml-4 mb-0" style="font-size:1.5rem; font-"><strong>{{ config('app.name') }}</strong></span>
     </a>
 
     <!-- Sidebar -->
@@ -16,7 +16,7 @@
           <img src="{{ asset('lte/dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block">{{ auth()->user()->name }}</a>
         </div>
       </div>
 
