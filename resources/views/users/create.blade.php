@@ -8,7 +8,7 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Formulario para creación de Usuario</h3>
+                <h3 class="card-title">FORMULARIO DE CREACIÓN DE USUARIOS</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
@@ -65,8 +65,9 @@
             <!-- general form elements -->
             <div class="card card-danger">
               <div class="card-header">
+                <h5>ALERTAS!</h5>
                     @if ($errors->any())
-                        <ul>
+                        <ul class="bg-danger">
                             @foreach ($errors->all() as $error)
                             <li>{{ $error }}</li>
                             @endforeach

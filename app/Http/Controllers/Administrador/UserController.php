@@ -39,7 +39,7 @@ class UserController extends Controller
             'nickname' => 'required|min:8',
             'email' => 'required|unique:users|min:10',
             'role' => 'required',
-            'dni' => 'min:8'
+            'dni' => 'nullable|min:8'
         ];
 
         $messages =
