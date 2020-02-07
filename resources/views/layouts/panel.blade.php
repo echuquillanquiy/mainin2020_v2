@@ -8,6 +8,7 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <link rel="shortcut icon" href="{{ asset('lte/dist/img/icon.png')}}">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{{ asset('lte/plugins/fontawesome-free/css/all.min.css') }}">
   <!-- Ionicons -->
@@ -31,23 +32,29 @@
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 <body class="sidebar-mini accent-dark control-sidebar-slide-open text-sm">
-<div class="wrapper">
+<div id="app">
+  <div class="wrapper">
+  
   <!-- Navbar -->
-  @include('includes.panel.nav')
-  <!-- /.navbar -->
+    @include('includes.panel.nav')
+    <!-- /.navbar -->
 
-  <!-- Main Sidebar Container -->
-  @include('includes.panel.menu')
+    <!-- Main Sidebar Container -->
+    @include('includes.panel.menu')
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    @yield('content')
-    <!-- /.content -->
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->            
+      @yield('content')
+      <example-component></example-component>
+      <!-- /.content -->
+    </div>
+
+    
+    <!-- /.content-wrapper -->
+    @include('includes.panel.footer')
+
   </div>
-  <!-- /.content-wrapper -->
-  @include('includes.panel.footer')
-
 </div>
 <!-- ./wrapper -->
 
