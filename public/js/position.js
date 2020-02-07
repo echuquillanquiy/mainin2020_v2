@@ -107,7 +107,7 @@ function deletePositionForm(position_id) {
         type: 'GET',
         url: '/positions/' + position_id,
         success: function(data) {
-            $("#frmDeletePosition #delete-title").html("Eliminar Puesto! (" + data.position.name + ")?");
+            $("#frmDeletePosition #delete-title").html("Se eliminará el puesto: (" + data.position.name + ")");
             $("#frmDeletePosition input[name=position_id]").val(data.position.id);
             $('#deletePositionModal').modal('show');
         },
