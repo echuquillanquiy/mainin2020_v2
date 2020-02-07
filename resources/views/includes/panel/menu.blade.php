@@ -71,7 +71,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="positions" class="nav-link">
+                <a href="/positions" class="nav-link">
                   <i class="fas fa-arrow-alt-circle-right nav-icon text-warning"></i>
                   <p>Puestos</p>
                 </a>

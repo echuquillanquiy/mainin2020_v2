@@ -3,6 +3,7 @@
 <html>
 <head>
   <meta charset="utf-8">
+  @yield('csrfToken')
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>{{config ('app.name')}}</title>
   <!-- Tell the browser to be responsive to screen width -->
@@ -46,7 +47,6 @@
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->            
       @yield('content')
-      <example-component></example-component>
       <!-- /.content -->
     </div>
 
@@ -83,5 +83,6 @@
 <script src="{{ asset('lte/dist/js/demo.js') }}"></script>
 <!-- Page script -->
 <script src="{{ asset('js/funciones.js') }}"></script>
+@yield('positionScrips')
 </body>
 </html>
