@@ -10,7 +10,7 @@ $(document).ready(function() {
             url: '/positions',
             data: {
                 name: $("#frmAddPosition input[name=name]").val(),
-                description: $("#frmAddPosition input[name=description]").val(),
+                description: $("#frmAddPosition textarea[name=description]").val(),
             },
             dataType: 'json',
             success: function(data) {
@@ -39,7 +39,7 @@ $(document).ready(function() {
             url: '/positions/' + $("#frmEditPosition input[name=position_id]").val(),
             data: {
                 name: $("#frmEditPosition input[name=name]").val(),
-                description: $("#frmEditPosition input[name=description]").val(),
+                description: $("#frmEditPosition textarea[name=description]").val(), 
             },
             dataType: 'json',
             success: function(data) {

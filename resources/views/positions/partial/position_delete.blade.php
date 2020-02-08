@@ -16,19 +16,17 @@
                         ¿Estás seguro de eliminar el Puesto?.
                     </p>
                     <p class="text-warning">
-                        <small>
+                        <h4 class="text-warning">
                             Está acción no podrá deshacerse.
-                        </small>
+                        </h4>
                     </p>
                 </div>
                 <div class="modal-footer">
-                    <input id="position_id" name="position_id" type="hidden" value="0">
-                        <input class="btn btn-default" data-dismiss="modal" type="button" value="Cancelar">
-                            <button class="btn btn-danger" id="btn-delete" type="button">
-                                Eliminar puesto
-                            </button>
-                        </input>
-                    </input>
+                    <input name="position_id" type="hidden" value="0">
+                    <input class="btn btn-default" data-dismiss="modal" type="button" value="Cancelar">
+                    <button class="btn btn-danger" id="btn-delete" type="button">
+                        Eliminar puesto
+                    </button>
                 </div>
             </form>
         </div>

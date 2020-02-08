@@ -20,14 +20,14 @@
                         <label>
                             Nombre del puesto
                         </label>
-                        <input class="form-control" id="name" name="name" required="" type="text">
+                        <input class="form-control" name="name" required="" type="text">
                         </input>
                     </div>
                     <div class="form-group">
                         <label>
                             Descripción
                         </label>
-                        <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+                        <textarea class="form-control" name="description" rows="3"></textarea>
                     </div>
                 </div>
                 <div class="modal-footer">
