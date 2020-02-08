@@ -29,13 +29,13 @@
   <link rel="stylesheet" href="{{ asset('lte/plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css') }}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('lte/dist/css/adminlte.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('lte/plugins/sweetalert2/sweetalert2.min.css') }}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 <body class="sidebar-mini accent-dark control-sidebar-slide-open text-sm">
 <div id="app">
   <div class="wrapper">
-  
   <!-- Navbar -->
     @include('includes.panel.nav')
     <!-- /.navbar -->
@@ -79,10 +79,12 @@
 <script src="{{asset('lte/plugins/bootstrap-switch/js/bootstrap-switch.min.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('lte/dist/js/adminlte.min.js') }}"></script>
+<script src="{{ asset('lte/plugins/sweetalert2/sweetalert2.min.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('lte/dist/js/demo.js') }}"></script>
 <!-- Page script -->
 <script src="{{ asset('js/funciones.js') }}"></script>
 @yield('positionScrips')
+@yield('categoryScrips')
 </body>
 </html>
