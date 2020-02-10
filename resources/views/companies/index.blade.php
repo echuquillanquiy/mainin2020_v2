@@ -18,7 +18,7 @@
               <div class="card-tools">
                 <div class="input-group input-group-sm" style="width: 150px;">
                     <a href="{{ route('companies.create') }}" class="btn btn-block btn-success float-right text-white">
-                    <i class="fas fa-landmark"></i>
+                    <i class="fas fa-landmark mr-2"></i>
                     Nuevo Empresa
                   </a>
                 </div>

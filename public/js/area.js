@@ -7,22 +7,22 @@ $(document).ready(function() {
         });
         $.ajax({
             type: 'POST',
-            url: '/positions',
+            url: '/areas',
             data: {
-                name: $("#frmAddPosition input[name=name]").val(),
-                description: $("#frmAddPosition textarea[name=description]").val(),
+                name: $("#frmAddArea input[name=name]").val(),
+                description: $("#frmAddArea textarea[name=description]").val(),
             },
             dataType: 'json',
             success: function(data) {
-                $('#frmAddPosition').trigger("reset");
-                $("#frmAddPosition .close").click();
+                $('#frmAddArea').trigger("reset");
+                $("#frmAddArea .close").click();
                 window.location.reload();
             },
             error: function(data) {
                 var errors = $.parseJSON(data.responseText);
-                $('#add-position-errors').html('');
+                $('#add-area-errors').html('');
                 $.each(errors.messages, function(key, value) {
-                    $('#add-position-errors').append('<li>' + value + '</li>');
+                    $('#add-area-errors').append('<li>' + value + '</li>');
                 });
                 $("#add-error-bag").show();
             }
@@ -36,22 +36,22 @@ $(document).ready(function() {
         });
         $.ajax({
             type: 'PUT',
-            url: '/positions/' + $("#frmEditPosition input[name=position_id]").val(),
+            url: '/areas/' + $("#frmEditArea input[name=area_id]").val(),
             data: {
-                name: $("#frmEditPosition input[name=name]").val(),
-                description: $("#frmEditPosition textarea[name=description]").val(), 
+                name: $("#frmEditArea input[name=name]").val(),
+                description: $("#frmEditArea textarea[name=description]").val(), 
             },
             dataType: 'json',
             success: function(data) {
-                $('#frmEditPosition').trigger("reset");
-                $("#frmEditPosition .close").click();
+                $('#frmEditArea').trigger("reset");
+                $("#frmEditArea .close").click();
                 window.location.reload();
             },
             error: function(data) {
                 var errors = $.parseJSON(data.responseText);
-                $('#edit-position-errors').html('');
+                $('#edit-area-errors').html('');
                 $.each(errors.messages, function(key, value) {
-                    $('#edit-position-errors').append('<li>' + value + '</li>');
+                    $('#edit-area-errors').append('<li>' + value + '</li>');
                 });
                 $("#edit-error-bag").show();
             }
@@ -65,10 +65,10 @@ $(document).ready(function() {
         });
         $.ajax({
             type: 'DELETE',
-            url: '/positions/' + $("#frmDeletePosition input[name=position_id]").val(),
+            url: '/areas/' + $("#deleteAreaModal input[name=area_id]").val(),
             dataType: 'json',
             success: function(data) {
-                $("#frmDeletePosition .close").click();
+                $("#deleteAreaModal .close").click();
                 window.location.reload();
             },
             error: function(data) {
@@ -78,23 +78,23 @@ $(document).ready(function() {
     });
 });
 
-function addPositionForm() {
+function addAreaForm() {
     $(document).ready(function() {
         $("#add-error-bag").hide();
-        $('#addPositionModal').modal('show');
+        $('#addAreaModal').modal('show');
     });
 }
 
-function editPositionForm(position_id) {
+function editAreaForm(area_id) {
     $.ajax({
         type: 'GET',
-        url: '/positions/' + position_id,
+        url: '/areas/' + area_id,
         success: function(data) {
             $("#edit-error-bag").hide();
-            $("#frmEditPosition input[name=name]").val(data.position.name);
-            $("#frmEditPosition textarea[name=description]").val(data.position.description);
-            $("#frmEditPosition input[name=position_id]").val(data.position.id);
-            $('#editPositionModal').modal('show');
+            $("#frmEditArea input[name=name]").val(data.area.name);
+            $("#frmEditArea textarea[name=description]").val(data.area.description);
+            $("#frmEditArea input[name=area_id]").val(data.area.id);
+            $('#editAreaModal').modal('show');
         },
         error: function(data) {
             console.log(data);
@@ -102,14 +102,14 @@ function editPositionForm(position_id) {
     });
 }
 
-function deletePositionForm(position_id) {
+function deleteAreaForm(area_id) {
     $.ajax({
         type: 'GET',
-        url: '/positions/' + position_id,
+        url: '/areas/' + area_id,
         success: function(data) {
-            $("#frmDeletePosition #delete-title").html("Se eliminará el puesto: (" + data.position.name + ")");
-            $("#frmDeletePosition input[name=position_id]").val(data.position.id);
-            $('#deletePositionModal').modal('show');
+            $("#frmDeleteArea #delete-title").html("Se eliminará el área: (" + data.area.name + ")");
+            $("#frmDeleteArea input[name=area_id]").val(data.area.id);
+            $('#deleteAreaModal').modal('show');
         },
         error: function(data) {
             console.log(data);

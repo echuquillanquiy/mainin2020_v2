@@ -22,7 +22,7 @@
             
                     <div class="card-tools">
                         <div class="input-group input-group-sm" style="width: 150px;">
-                            <a onclick="event.preventDefault();addAmountForm();" href="#" class="btn btn-block btn-success float-right text-white" data-toggle="modal"><i class="fas fa-coins"></i> Nuevo Monto</a>
+                            <a onclick="event.preventDefault();addAmountForm();" href="#" class="btn btn-block btn-success float-right text-white" data-toggle="modal"><i class="fas fa-coins mr-2"></i> Nuevo Monto</a>
                         </div>
                     </div>
                 </div>

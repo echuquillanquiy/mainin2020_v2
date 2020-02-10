@@ -86,5 +86,6 @@
 <script src="{{ asset('js/funciones.js') }}"></script>
 @yield('positionScrips')
 @yield('categoryScrips')
+@yield('areaScrips')
 </body>
 </html>

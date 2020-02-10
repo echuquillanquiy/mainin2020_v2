@@ -22,7 +22,7 @@
             
                     <div class="card-tools">
                         <div class="input-group input-group-sm" style="width: 150px;">
-                            <a onclick="event.preventDefault();addPositionForm();" href="#" class="btn btn-block btn-success float-right text-white" data-toggle="modal"><i class="fas fa-user-plus"></i> Nuevo Puesto</a>
+                            <a onclick="event.preventDefault();addPositionForm();" href="#" class="btn btn-block btn-success float-right text-white" data-toggle="modal"><i class="fab fa-critical-role mr-2"></i> Nuevo Puesto</a>
                         </div>
                     </div>
                 </div>
