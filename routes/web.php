@@ -17,4 +17,6 @@ Route::middleware(['auth', 'administrador'])->namespace('Administrador')->group(
     Route::resource('categories', 'CategoryController');
     Route::resource('amounts', 'AmountController');
     Route::resource('areas', 'AreaController');
+
+    Route::resource('collaborators', 'CollaboratorController');
 });

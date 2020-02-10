@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Administrador;
 
-use App\Collaborator;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Collaborator;
 
 class CollaboratorController extends Controller
 {
@@ -14,7 +15,8 @@ class CollaboratorController extends Controller
      */
     public function index()
     {
-        //
+        $collaborators = Collaborator::orderBy('name', 'asc')->paginate(25);
+        return view('collaborators.index', compact('collaborators'));
     }
 
     /**
@@ -24,7 +26,7 @@ class CollaboratorController extends Controller
      */
     public function create()
     {
-        //
+        return view('collaborators.create');
     }
 
     /**
@@ -41,10 +43,10 @@ class CollaboratorController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Collaborator  $collaborator
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Collaborator $collaborator)
+    public function show($id)
     {
         //
     }
@@ -52,10 +54,10 @@ class CollaboratorController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Collaborator  $collaborator
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Collaborator $collaborator)
+    public function edit($id)
     {
         //
     }
@@ -64,10 +66,10 @@ class CollaboratorController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Collaborator  $collaborator
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Collaborator $collaborator)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -75,10 +77,10 @@ class CollaboratorController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Collaborator  $collaborator
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Collaborator $collaborator)
+    public function destroy($id)
     {
         //
     }
