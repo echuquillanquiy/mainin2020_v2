@@ -15,5 +15,5 @@ Route::middleware(['auth', 'administrador'])->namespace('Administrador')->group(
     Route::resource('positions', 'PositionController');
     Route::resource('companies', 'CompanyController');
     Route::resource('categories', 'CategoryController');
-
+    Route::resource('amounts', 'AmountController');
 });

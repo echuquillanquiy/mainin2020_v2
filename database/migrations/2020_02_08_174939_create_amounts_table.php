@@ -15,6 +15,8 @@ class CreateAmountsTable extends Migration
     {
         Schema::create('amounts', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('description');
+            $table->integer('amount');
             $table->timestamps();
         });
     }

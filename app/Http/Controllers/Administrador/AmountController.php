@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Administrador;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Amount;
+use Illuminate\Support\Facades\Validator;
 
 class AmountController extends Controller
 {
@@ -14,7 +16,9 @@ class AmountController extends Controller
      */
     public function index()
     {
-        //
+        $amounts = Amount::orderBy('id', 'asc')->paginate(9);
+
+        return view('amounts.index')->with('amounts',$amounts);
     }
 
     /**
@@ -35,7 +39,24 @@ class AmountController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->input(), array(
+            'description' => 'required|min:5',
+            'amount' => 'required|min:3',
+        ));
+
+        if ($validator->fails()) {
+            return response()->json([
+                'error'    => true,
+                'messages' => $validator->errors(),
+            ], 422);
+        }
+
+        $amount = Amount::create($request->all());
+
+        return response()->json([
+            'error' => false,
+            'amount'  => $amount,
+        ], 200);
     }
 
     /**
@@ -46,7 +67,12 @@ class AmountController extends Controller
      */
     public function show($id)
     {
-        //
+        $amount = Amount::find($id);
+
+        return response()->json([
+            'error' => false,
+            'amount'  => $amount,
+        ], 200);
     }
 
     /**
@@ -69,7 +95,29 @@ class AmountController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validator = Validator::make($request->input(), array(
+            'description' => 'required|min:5',
+            'amount' => 'required|min:3',
+        ));
+
+        if ($validator->fails()) {
+            return response()->json([
+                'error'    => true,
+                'messages' => $validator->errors(),
+            ], 422);
+        }
+
+        $amount = Amount::find($id);
+
+        $amount->description =  $request->description;
+        $amount->amount = $request->amount;
+
+        $amount->save();
+
+        return response()->json([
+            'error' => false,
+            'amount'  => $amount,
+        ], 200);
     }
 
     /**
@@ -80,6 +128,11 @@ class AmountController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $amount = Amount::destroy($id);
+
+        return response()->json([
+            'error' => false,
+            'amount'  => $amount,
+        ], 200);
     }
 }
