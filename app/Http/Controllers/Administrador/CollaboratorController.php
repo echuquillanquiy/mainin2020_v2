@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Administrador;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Collaborator;
+use App\Department;
 
 class CollaboratorController extends Controller
 {
@@ -26,7 +27,8 @@ class CollaboratorController extends Controller
      */
     public function create()
     {
-        return view('collaborators.create');
+        $departments = Department::all();
+        return view('collaborators.create', compact('departments'));
     }
 
     /**
