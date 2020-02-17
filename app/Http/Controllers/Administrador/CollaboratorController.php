@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Collaborator;
 use App\Department;
+use App\Ubigeo;
 
 class CollaboratorController extends Controller
 {
@@ -27,8 +28,9 @@ class CollaboratorController extends Controller
      */
     public function create()
     {
+        $ubigeos = Ubigeo::select('ubigeo','distrito')->get();
         $departments = Department::all();
-        return view('collaborators.create', compact('departments'));
+        return view('collaborators.create', compact('departments', 'ubigeos'));
     }
 
     /**
