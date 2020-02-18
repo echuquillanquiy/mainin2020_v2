@@ -30,6 +30,8 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('lte/dist/css/adminlte.min.css') }}">
   <link rel="stylesheet" href="{{ asset('lte/plugins/sweetalert2/sweetalert2.min.css') }}">
+
+  @yield('inputfileStyle')
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
@@ -87,5 +89,7 @@
 @yield('positionScrips')
 @yield('categoryScrips')
 @yield('areaScrips')
+
+@yield('ScriptInputfile')
 </body>
 </html>

@@ -7,6 +7,13 @@ use Illuminate\Http\Request;
 use App\Collaborator;
 use App\Department;
 use App\Ubigeo;
+use App\Category;
+use App\Amount;
+use App\Area;
+use App\Position;
+use App\Company;
+
+use Redirect,Response;
 
 class CollaboratorController extends Controller
 {
@@ -28,9 +35,14 @@ class CollaboratorController extends Controller
      */
     public function create()
     {
+        $categories = Category::all();
+        $amounts = Amount::all();
+        $areas = Area::all();
+        $positions = Position::all();
+        $companies = Company::all();
         $ubigeos = Ubigeo::select('ubigeo','distrito')->get();
         $departments = Department::all();
-        return view('collaborators.create', compact('departments', 'ubigeos'));
+        return view('collaborators.create', compact('departments', 'ubigeos', 'categories', 'amounts', 'areas', 'positions', 'companies'));
     }
 
     /**
@@ -41,7 +53,11 @@ class CollaboratorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if($photo = Collaborator::setPhoto($request->photo_up))
+            $request->request->add(['photo' => $photo]);
+        $collaborator = Collaborator::create($request->all());
+        $notification = 'El colaborador se ha registrado correctamente.';
+        return redirect('/collaborators')->with(compact('notification'));
     }
 
     /**

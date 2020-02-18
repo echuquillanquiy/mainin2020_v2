@@ -75,7 +75,7 @@
                       <td>
                         @if($collaborator->state == "ACEPTADO")
                             
-                            <a href="" id="" data-id="{{ $collaborator->id }}" data-toggle="tooltip" data-placement="top" title="Aceptado"  class="btn btn-sm"><i class="fas fa-user-check text-success"></i></a>
+                            <a href="" id="" data-id="{{ $collaborator->id }}" data-toggle="tooltip" data-placement="top" title="Aceptado"  class="btn btn-sm"><i class="fas fa-user-check fa-2x text-success"></i></a>
 
                         @elseif($collaborator->state == "BANEADO")
                                 

@@ -1,29 +1,3 @@
--- --------------------------------------------------------
--- Host:                         localhost
--- Versión del servidor:         5.7.24 - MySQL Community Server (GPL)
--- SO del servidor:              Win64
--- HeidiSQL Versión:             10.2.0.5599
--- --------------------------------------------------------
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET NAMES utf8 */;
-/*!50503 SET NAMES utf8mb4 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-
--- Volcando estructura para tabla mainin2020.ubigeos
-CREATE TABLE IF NOT EXISTS `ubigeos` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `ubigeo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `distrito` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `provincia` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `departamento` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2048 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- Volcando datos para la tabla mainin2020.ubigeos: ~1,873 rows (aproximadamente)
-DELETE FROM `ubigeos`;
-/*!40000 ALTER TABLE `ubigeos` DISABLE KEYS */;
 INSERT INTO `ubigeos` (`id`, `ubigeo`, `distrito`, `provincia`, `departamento`) VALUES
 	(1, '10101', 'Chachapoyas', 'Chachapoyas', 'Amazonas'),
 	(2, '10102', 'Asuncion', 'Chachapoyas', 'Amazonas'),
