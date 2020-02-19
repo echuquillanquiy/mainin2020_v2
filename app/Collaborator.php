@@ -82,6 +82,21 @@ class Collaborator extends Model
         return $this->belongsTo(Department::class)->withDefault();
     }
 
+    public function province()
+    {
+        return $this->belongsTo(Province::class)->withDefault();
+    }
+
+    public function district()
+    {
+        return $this->belongsTo(District::class)->withDefault();
+    }
+
+    public function ubigueo()
+    {
+        return $this->belongsTo(Ubigeo::class)->withDefault();
+    }
+
     public static function setPhoto($photo, $actual = false)
     {
         if($photo)

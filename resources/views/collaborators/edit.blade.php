@@ -31,11 +31,10 @@
                 <div class="tab-content" id="custom-tabs-three-tabContent">
                   <div class="tab-pane fade show active" id="custom-tabs-three-home" role="tabpanel" aria-labelledby="custom-tabs-three-home-tab">
                      <div class="row text-center">
-                        <input type="hidden" value="{{ auth()->user()->id }}" name="user_id">
-                        <input type="hidden" value="{{ auth()->user()->name }}" name="interviewer">
                         <div class="form-group col-sm-12 col-lg-2 col-xl-2 col-s-12">
                           <label for="document">Tipo de documento</label>
                           <select class="form-control" name="document">
+                            <option value="{{ $collaborators->document }}" disabled selected>{{ $collaborators->document }}</option>
                             <option value="DNI">DNI</option>
                             <option value="PASAPORTE">PASAPORTE</option>
                             <option value="CARNET DE EXTRANJERIA">CARNET DE EXTRANJERIA</option>
@@ -44,12 +43,12 @@
 
                         <div class="form-group col-sm-12 col-lg-2 col-xl-2 col-s-12">
                           <label for="n_document">N° de Documento</label>
-                          <input type="text" class="form-control" name="n_document">
+                          <input type="text" class="form-control" name="n_document" value="{{ $collaborators->n_document }}">
                         </div>
 
                         <div class="form-group col-sm-12 col-lg-5 col-xl-5 col-s-12">
                           <label for="name">Nombres y Apellidos</label>
-                        <input type="text" name="name" class="form-control" id="name" value="{{ old('name') }}">
+                        <input type="text" name="name" class="form-control" id="name" value="{{ old('name', $collaborators->name) }}">
                         </div>
                         
                         <div class="form-group col-sm-12 col-lg-3 col-xl-3 col-s-12">
@@ -58,13 +57,14 @@
                             <div class="input-group-prepend">
                               <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                             </div>
-                          <input type="date" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask name="date_of_birthday" id="date_of_birthday" value="{{ old('date_of_birthday') }}">
+                          <input type="date" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask name="date_of_birthday" id="date_of_birthday" value="{{ old('date_of_birthday', $collaborators->date_of_birthday) }}">
                           </div>
                         </div>
 
                         <div class="form-group col-sm-12 col-lg-3 col-xl-3 col-s-12">
                           <label for="instruction">Grado de instrucción</label>
                           <select class="form-control select2" name="instruction">
+                            <option value="{{ $collaborators->instruction }}" disabled selected>{{ $collaborators->instruction }}</option>
                             <option value="ANALFABETO">ANALFABETO</option>
                             <option value="PRIMARIA COMPLETA">PRIMARIA COMPLETA</option>
                             <option value="SECUNDARIA COMPLETA">SECUNDARIA COMPLETA</option>
@@ -79,7 +79,7 @@
 
                         <div class="form-group col-sm-12 col-lg-2 col-xl-2 col-s-12">
                           <label for="phone">Telefóno / Celular</label>
-                          <input type="text" class="form-control" name="phone" value="{{ old('phone') }}">
+                          <input type="text" class="form-control" name="phone" value="{{ old('phone', $collaborators->phone) }}">
                         </div>
 
                         <div class="form-group col-sm-12 col-lg-4 col-xl-4 col-s-12">
@@ -95,7 +95,7 @@
                         <div class="form-group col-md-6 col-lg-2 col-xl-2 col-s-12">
                           <label for="department_id">Departamento</label>
                           <select class="form-control select2" data-style="btn-success" name="department_id">
-                            <option>[SELECCIONE]</option>
+                            <option value="{{ $collaborators->department->id }}" disabled selected>{{ $collaborators->department->name }}</option>
                             @foreach ($departments as $department)
                               <option value="{{ $department->id }}">{{ $department->name }}</option>
                             @endforeach
@@ -105,20 +105,21 @@
                         <div class="form-group col-sm-12 col-lg-2 col-xl-2 col-s-12">
                           <label for="province_id">Provincia</label>
                           <select class="form-control select2" name="province_id">
-
+                            <option value="{{ $collaborators->province->id }}" disabled selected>{{ $collaborators->province->name }}</option>
                           </select>
                         </div>
 
                         <div class="form-group col-sm-12 col-lg-2 col-xl-2 col-s-12">
                           <label for="district_id">Distrito</label>
                           <select class="form-control select2" name="district_id">
+                            <option value="{{ $collaborators->district->id }}">{{ $collaborators->district->name }}</option>
                           </select>
                         </div>
 
                         <div class="form-group col-sm-12 col-lg-2 col-xl-2 col-s-12">
                           <label for="ubigeo">Lugar de Nacimiento</label>
                           <select class="form-control select2" name="ubigeo">
-                            <option>[SELECCIONE]</option>
+                          <option value="{{ $collaborators->ubigueo->id }}">{{ $collaborators->ubigueo->distrito }}</option>
                             @foreach ($ubigeos as $ubigeo)
                               <option value="{{ $ubigeo->ubigeo }}">{{ $ubigeo->distrito }}</option>
                             @endforeach

@@ -79,7 +79,15 @@ class CollaboratorController extends Controller
      */
     public function edit($id)
     {
-        //
+        $collaborators = Collaborator::findOrFail($id);
+        $categories = Category::all();
+        $amounts = Amount::all();
+        $areas = Area::all();
+        $positions = Position::all();
+        $companies = Company::all();
+        $ubigeos = Ubigeo::select('ubigeo','distrito')->get();
+        $departments = Department::all();
+        return view('collaborators.edit', compact('collaborators', 'departments', 'ubigeos', 'categories', 'amounts', 'areas', 'positions', 'companies'));
     }
 
     /**
