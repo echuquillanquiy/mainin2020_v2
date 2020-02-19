@@ -31,7 +31,6 @@
                 <div class="tab-content" id="custom-tabs-three-tabContent">
                   <div class="tab-pane fade show active" id="custom-tabs-three-home" role="tabpanel" aria-labelledby="custom-tabs-three-home-tab">
                      <div class="row text-center">
-
                         <input type="hidden" value="{{ auth()->user()->id }}" name="user_id">
                         <input type="hidden" value="{{ auth()->user()->name }}" name="interviewer">
                         <div class="form-group col-sm-12 col-lg-2 col-xl-2 col-s-12">
@@ -94,8 +93,8 @@
                         </div>
 
                         <div class="form-group col-md-6 col-lg-2 col-xl-2 col-s-12">
-                          <label for="department">Departamento</label>
-                          <select class="form-control select2" data-style="btn-success" name="department">
+                          <label for="department_id">Departamento</label>
+                          <select class="form-control select2" data-style="btn-success" name="department_id">
                             <option>[SELECCIONE]</option>
                             @foreach ($departments as $department)
                               <option value="{{ $department->id }}">{{ $department->name }}</option>
@@ -104,15 +103,15 @@
                         </div>
 
                         <div class="form-group col-sm-12 col-lg-2 col-xl-2 col-s-12">
-                          <label for="province">Provincia</label>
-                          <select class="form-control select2" name="province">
+                          <label for="province_id">Provincia</label>
+                          <select class="form-control select2" name="province_id">
                             <option>[SELECCIONE]</option>
                           </select>
                         </div>
 
                         <div class="form-group col-sm-12 col-lg-2 col-xl-2 col-s-12">
-                          <label for="district">Distrito</label>
-                          <select class="form-control select2" name="district">
+                          <label for="district_id">Distrito</label>
+                          <select class="form-control select2" name="district_id">
                             <option>[SELECCIONE]</option>
                           </select>
                         </div>
@@ -377,16 +376,36 @@
                             <option value="ING. CARASONA">ING. CARASONA</option>
                           </select>
                         </div>
-
-                        <div class="col-6 mb-0">
-                          <label for="photo1">Foto</label>
-                          <input type="file" name="photo_up" id="photo1" data-initial-preview="{{ isset($data->image) ? Storage::url("collaborators/photo/$data->image") : "http://static1.elgeeky.com/wp-content/uploads/naruto-imagen.jpg" }}" accept="image/*" />                                    
-                      </div>
-
                       </div>
                   </div>
                   <div class="tab-pane fade" id="custom-tabs-three-messages" role="tabpanel" aria-labelledby="custom-tabs-three-messages-tab">
-                      
+                      <div class="row text-center">
+
+                        <div class="form-group col-sm-12 col-lg-3 col-xl-3 col-s-12">
+                          <label for="date_up_obs">Levantamiento de observación</label>
+                          <div class="input-group">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                            </div>
+                          <input type="date" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask name="date_up_obs" id="date_up_obs" value="{{ old('date_up_obs', date('Y-m-d')) }}">
+                          </div>
+                        </div>
+                        
+                        <div class="form-group col-12 col-sm-12 col-md-5 col-xl-5 col-lg-5">
+                          <label>Observaciones</label>
+                          <textarea name="observations" id="observations" rows="1" class="form-control"></textarea>
+                        </div>
+
+                        <div class="form-group col-12 col-sm-12 col-md-4 col-xl-4 col-lg-4">
+                          <label>Comentarios</label>
+                          <textarea name="comments" id="comments" rows="1" class="form-control"></textarea>
+                        </div>
+
+                        <div class="col-5">
+                          <label for="photo1">Foto</label>
+                          <input type="file" name="photo_up" id="photo1" data-initial-preview="{{ isset($data->image) ? Storage::url("collaborators/photo/$data->image") : "http://static1.elgeeky.com/wp-content/uploads/naruto-imagen.jpg" }}" accept="image/*" />                                    
+                        </div>
+                      </div>
                   </div>
                 </div>
               </div>
