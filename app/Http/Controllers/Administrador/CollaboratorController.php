@@ -41,7 +41,7 @@ class CollaboratorController extends Controller
         $areas = Area::all();
         $positions = Position::all();
         $companies = Company::all();
-        $ubigeos = Ubigeo::select('ubigeo','distrito')->get();
+        $ubigeos = Ubigeo::all();
         $departments = Department::all();
         return view('collaborators.create', compact('departments', 'ubigeos', 'categories', 'amounts', 'areas', 'positions', 'companies'));
     }
@@ -87,7 +87,7 @@ class CollaboratorController extends Controller
         $areas = Area::all();
         $positions = Position::all();
         $companies = Company::all();
-        $ubigeos = Ubigeo::select('ubigeo','distrito')->get();
+        $ubigeos = Ubigeo::all();
         $departments = Department::all();
         return view('collaborators.edit', compact('collaborators', 'departments', 'ubigeos', 'categories', 'amounts', 'areas', 'positions', 'companies'));
     }

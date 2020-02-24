@@ -29,7 +29,7 @@ class Collaborator extends Model
 
         'district_id',
 
-        'ubigeo',
+        'ubigeo_cod',
 
 
         'position',
@@ -92,7 +92,7 @@ class Collaborator extends Model
         return $this->belongsTo(District::class)->withDefault();
     }
 
-    public function ubigueo()
+    public function ubigeo()
     {
         return $this->belongsTo(Ubigeo::class)->withDefault();
     }

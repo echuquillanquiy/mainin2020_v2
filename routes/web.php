@@ -19,5 +19,5 @@ Route::middleware(['auth', 'administrador'])->namespace('Administrador')->group(
     Route::resource('areas', 'AreaController');
 
     Route::resource('collaborators', 'CollaboratorController');
-    Route::post('/collaborators/{collaborator}', 'CollaboratorsController@show')->name('ver-foto');
+    Route::post('/collaborators/{collaborator}', 'CollaboratorController@show')->name('ver-foto');
 });

@@ -84,17 +84,17 @@
 
                         <div class="form-group col-sm-12 col-lg-4 col-xl-4 col-s-12">
                           <label for="address">Dirección</label>
-                          <input type="text" name="address" id="address" class="form-control" value="{{ old('address') }}">
+                          <input type="text" name="address" id="address" class="form-control" value="{{ old('address', $collaborators->address) }}">
                         </div>
 
                         <div class="form-group col-sm-12 col-lg-3 col-s-12">
                           <label for="email">Correo electronico</label>
-                          <input type="text" name="email" id="email" class="form-control" value="{{ old('email') }}">
+                          <input type="text" name="email" id="email" class="form-control" value="{{ old('email', $collaborators->email) }}">
                         </div>
 
                         <div class="form-group col-md-6 col-lg-2 col-xl-2 col-s-12">
                           <label for="department_id">Departamento</label>
-                          <select class="form-control select2" data-style="btn-success" name="department_id">
+                          <select class="form-control select2" data-style="btn-success" name="department_id" id="select-department">
                             <option value="{{ $collaborators->department->id }}" disabled selected>{{ $collaborators->department->name }}</option>
                             @foreach ($departments as $department)
                               <option value="{{ $department->id }}">{{ $department->name }}</option>
@@ -104,24 +104,24 @@
 
                         <div class="form-group col-sm-12 col-lg-2 col-xl-2 col-s-12">
                           <label for="province_id">Provincia</label>
-                          <select class="form-control select2" name="province_id">
+                          <select class="form-control select2" name="province_id" id="select-province">
                             <option value="{{ $collaborators->province->id }}" disabled selected>{{ $collaborators->province->name }}</option>
                           </select>
                         </div>
 
                         <div class="form-group col-sm-12 col-lg-2 col-xl-2 col-s-12">
                           <label for="district_id">Distrito</label>
-                          <select class="form-control select2" name="district_id">
+                          <select class="form-control select2" name="district_id" id="select-district">
                             <option value="{{ $collaborators->district->id }}">{{ $collaborators->district->name }}</option>
                           </select>
                         </div>
 
                         <div class="form-group col-sm-12 col-lg-2 col-xl-2 col-s-12">
                           <label for="ubigeo">Lugar de Nacimiento</label>
-                          <select class="form-control select2" name="ubigeo">
-                          <option value="{{ $collaborators->ubigueo->id }}">{{ $collaborators->ubigueo->distrito }}</option>
+                          <select class="form-control select2" name="ubigeo_id">
+                          <option value="{{ $collaborators->ubigeo->id }}">{{ $collaborators->ubigeo->distrito }}</option>
                             @foreach ($ubigeos as $ubigeo)
-                              <option value="{{ $ubigeo->ubigeo }}">{{ $ubigeo->distrito }}</option>
+                              <option value="{{ $ubigeo->ubigeo_cod }}">{{ $ubigeo->distrito }}</option>
                             @endforeach
                           </select>
                         </div>
@@ -250,7 +250,7 @@
                             <div class="input-group-prepend">
                               <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                             </div>
-                          <input type="date" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask name="date_medic_examen" id="date_of_birthday" value="{{ old('date_medic_examen', date('Y-m-d')) }}">
+                          <input type="date" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask name="date_medic_examen" id="date_medic_examen" value="{{ old('date_medic_examen', date('Y-m-d')) }}">
                           </div>
                         </div>
 
@@ -326,7 +326,7 @@
                             <div class="input-group-prepend">
                               <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                             </div>
-                          <input type="date" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask name="induction_date_start" id="date_of_birthday" value="{{ old('induction_date_start', date('Y-m-d')) }}">
+                          <input type="date" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask name="induction_date_start" id="induction_date_start" value="{{ old('induction_date_start', date('Y-m-d')) }}">
                           </div>
                         </div>
 
@@ -336,7 +336,7 @@
                             <div class="input-group-prepend">
                               <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                             </div>
-                          <input type="date" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask name="induction_date_end" id="date_of_birthday" value="{{ old('induction_date_end', date('Y-m-d')) }}">
+                          <input type="date" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask name="induction_date_end" id="induction_date_end" value="{{ old('induction_date_end', date('Y-m-d')) }}">
                           </div>
                         </div>
 
@@ -426,4 +426,5 @@
     <script src="{{ asset('bootstrap-fileinput/js/locales/es.js') }}"></script>
     <script src="{{ asset('bootstrap-fileinput/themes/fas/theme.min.js') }}"></script>
     <script src="{{ asset('js/photo.js') }}"></script>
+    <script src="{{ asset('js/province.js') }}"></script>
 @endsection

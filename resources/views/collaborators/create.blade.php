@@ -117,12 +117,9 @@
                         </div>
 
                         <div class="form-group col-sm-12 col-lg-2 col-xl-2 col-s-12">
-                          <label for="ubigeo">Lugar de Nacimiento</label>
-                          <select class="form-control select2" name="ubigeo">
-                            <option>[SELECCIONE]</option>
-                            @foreach ($ubigeos as $ubigeo)
-                              <option value="{{ $ubigeo->ubigeo }}">{{ $ubigeo->distrito }}</option>
-                            @endforeach
+                          <label for="ubigeo_id">Ubigeo</label>
+                          <select class="form-control select2" name="ubigeo_id" id="select-ubigeo">
+
                           </select>
                         </div>
 

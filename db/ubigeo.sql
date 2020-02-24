@@ -1,4 +1,4 @@
-INSERT INTO `ubigeos` (`id`, `ubigeo`, `distrito`, `provincia`, `departamento`) VALUES
+INSERT INTO `ubigeos` (`id`, `ubigeo_cod`, `distrito`, `provincia`, `departamento`) VALUES
 	(1, '10101', 'Chachapoyas', 'Chachapoyas', 'Amazonas'),
 	(2, '10102', 'Asuncion', 'Chachapoyas', 'Amazonas'),
 	(3, '10103', 'Balsas', 'Chachapoyas', 'Amazonas'),
@@ -1873,8 +1873,3 @@ INSERT INTO `ubigeos` (`id`, `ubigeo`, `distrito`, `provincia`, `departamento`) 
 	(1872, '250304', 'Neshuya', 'Padre Abad', 'Ucayali'),
 	(1873, '250305', 'Alexander von Humboldt', 'Padre Abad', 'Ucayali'),
 	(1874, '250401', 'Purus', 'Purus', 'Ucayali');
-/*!40000 ALTER TABLE `ubigeos` ENABLE KEYS */;
-
-/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
-/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

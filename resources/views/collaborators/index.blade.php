@@ -59,8 +59,8 @@
                       <td>{{ $collaborator->category }}</td>
                       <td>{{ $collaborator->ubigeo }}</td>
                       <td>
-                        <a href="{{ url('collaborators/'. $collaborator->id) }}">
-                          <img class="img-circle img-sm" src="{{ Storage::url("collaborators/photo/$collaborator->photo") }}">
+                        <a href="{{ url('collaborators/'. $collaborator->id) }}" class="ver-foto">
+                          <img class="img-circle img-sm" src="{{ Storage::url("collaborators/photo/$collaborator->photo") }}" alt="Foto Colaborador">
                         </a>
                       </td>
                       <td>
@@ -74,15 +74,15 @@
                       <td>
                         @if($collaborator->state == "ACEPTADO")
                             
-                            <a href="" id="" data-id="{{ $collaborator->id }}" data-toggle="tooltip" data-placement="top" title="Aceptado"  class="btn btn-sm"><i class="fas fa-user-check fa-lg text-success"></i></a>
+                            <a href="url('collaborators/'. $collaborator->id) }}" id="" data-id="{{ $collaborator->id }}" data-toggle="tooltip" data-placement="top" title="Aceptado"  class="btn btn-sm cambiar-estado"><i class="fas fa-user-check fa-lg text-success"></i></a>
 
                         @elseif($collaborator->state == "BANEADO")
                                 
-                            <a href="" id="" data-id="{{ $collaborator->id }}" data-toggle="tooltip" data-placement="top" title="Baneado"  class="btn btn-sm"><i class="fas fa-user-slash fa-lg text-danger"></i></a>
+                            <a href="url('collaborators/'. $collaborator->id) }}" id="" data-id="{{ $collaborator->id }}" data-toggle="tooltip" data-placement="top" title="Baneado"  class="btn btn-sm cambiar-estado"><i class="fas fa-user-slash fa-lg text-danger"></i></a>
 
                         @elseif($collaborator->state == "OBSERVADO")
 
-                            <a href="" id="" data-id="{{ $collaborator->id }}" data-toggle="tooltip" data-placement="top" title="Observado" class="btn btn-sm"><i class="fas fa-exclamation-triangle fa-lg text-warning"></i></a>                                        
+                            <a href="url('collaborators/'. $collaborator->id) }}" id="" data-id="{{ $collaborator->id }}" data-toggle="tooltip" data-placement="top" title="Observado" class="btn btn-sm cambiar-estado"><i class="fas fa-exclamation-triangle fa-lg text-warning"></i></a>                                        
                         @endif
                     </td>
                     
@@ -112,21 +112,40 @@
     </div>
 </div>
 
-<div class="modal fade" id="modal-default" style="display: block; padding-right: 17px;" aria-modal="true">
+<div class="modal fade" id="modal-ver-foto" tabindex="-1">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title">Default Modal</h4>
+        <h4 class="modal-title">Foto de colaborador</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">×</span>
         </button>
       </div>
       <div class="modal-body">
-        <p>One fine body…</p>
       </div>
-      <div class="modal-footer justify-content-between">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+      <div class="modal-footer justify-content-between right">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+
+
+<div class="modal fade" id="modal-cambiar-estado" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Cambiar estado</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      </div>
+      <div class="modal-footer justify-content-between right">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
       </div>
     </div>
     <!-- /.modal-content -->
