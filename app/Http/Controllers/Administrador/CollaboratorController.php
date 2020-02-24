@@ -12,6 +12,7 @@ use App\Amount;
 use App\Area;
 use App\Position;
 use App\Company;
+use Illuminate\Support\Facades\Storage;
 
 use Redirect,Response;
 
@@ -68,7 +69,8 @@ class CollaboratorController extends Controller
      */
     public function show($id)
     {
-        //
+        $collaborator = Collaborator::findOrFail($id);
+        return view('collaborators.ver', compact('collaborator'));
     }
 
     /**

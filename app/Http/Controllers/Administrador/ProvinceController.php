@@ -4,14 +4,16 @@ namespace App\Http\Controllers\Administrador;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Province;
 
 class ProvinceController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
+    public function byDepartment($id)
+    {
+        return Province::where('department_id', $id)->get(['id', 'name']);
+    }
+
     public function index()
     {
         //

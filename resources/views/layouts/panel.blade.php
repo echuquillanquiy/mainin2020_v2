@@ -91,5 +91,6 @@
 @yield('areaScrips')
 
 @yield('ScriptInputfile')
+@yield('foto')
 </body>
 </html>

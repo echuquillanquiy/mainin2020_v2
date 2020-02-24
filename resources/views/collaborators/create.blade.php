@@ -94,7 +94,7 @@
 
                         <div class="form-group col-md-6 col-lg-2 col-xl-2 col-s-12">
                           <label for="department_id">Departamento</label>
-                          <select class="form-control select2" data-style="btn-success" name="department_id">
+                          <select class="form-control select2" data-style="btn-success" id="select-department" name="department_id">
                             <option>[SELECCIONE]</option>
                             @foreach ($departments as $department)
                               <option value="{{ $department->id }}">{{ $department->name }}</option>
@@ -104,14 +104,15 @@
 
                         <div class="form-group col-sm-12 col-lg-2 col-xl-2 col-s-12">
                           <label for="province_id">Provincia</label>
-                          <select class="form-control select2" name="province_id">
+                          <select class="form-control select2" name="province_id" id="select-province">
 
                           </select>
                         </div>
 
                         <div class="form-group col-sm-12 col-lg-2 col-xl-2 col-s-12">
                           <label for="district_id">Distrito</label>
-                          <select class="form-control select2" name="district_id">
+                          <select class="form-control select2" name="district_id" id="select-district">
+
                           </select>
                         </div>
 
@@ -249,7 +250,7 @@
                             <div class="input-group-prepend">
                               <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                             </div>
-                          <input type="date" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask name="date_medic_examen" id="date_of_birthday" value="{{ old('date_medic_examen', date('Y-m-d')) }}">
+                          <input type="date" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask name="date_medic_examen" id="date_medic_examen" value="{{ old('date_medic_examen', date('Y-m-d')) }}">
                           </div>
                         </div>
 
@@ -325,7 +326,7 @@
                             <div class="input-group-prepend">
                               <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                             </div>
-                          <input type="date" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask name="induction_date_start" id="date_of_birthday" value="{{ old('induction_date_start', date('Y-m-d')) }}">
+                          <input type="date" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask name="induction_date_start" id="induction_date_start" value="{{ old('induction_date_start', date('Y-m-d')) }}">
                           </div>
                         </div>
 
@@ -335,7 +336,7 @@
                             <div class="input-group-prepend">
                               <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                             </div>
-                          <input type="date" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask name="induction_date_end" id="date_of_birthday" value="{{ old('induction_date_end', date('Y-m-d')) }}">
+                          <input type="date" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask name="induction_date_end" id="induction_date_end" value="{{ old('induction_date_end', date('Y-m-d')) }}">
                           </div>
                         </div>
 
@@ -425,4 +426,5 @@
     <script src="{{ asset('bootstrap-fileinput/js/locales/es.js') }}"></script>
     <script src="{{ asset('bootstrap-fileinput/themes/fas/theme.min.js') }}"></script>
     <script src="{{ asset('js/photo.js') }}"></script>
+    <script src="{{ asset('js/province.js') }}"></script>
 @endsection

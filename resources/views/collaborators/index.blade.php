@@ -26,7 +26,7 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body table-responsive p-0">
-              <table class="table table-hover text-center">
+              <table class="table table-hover text-center text-nowrap">
                 <thead>
                   <tr>
                     <th>Entrevistador</th>
@@ -39,6 +39,7 @@
                     <th>Empresa Habilitada</th>
                     <th>Categororía</th>
                     <th>Ubigeo</th>
+                    <th>Foto</th>
                     <th>Quitar</th>
                     <th>Estado</th>
                     <th>Opciones</th>
@@ -53,10 +54,15 @@
                       <td>{{ $collaborator->name }}</td>
                       <td>{{ $collaborator->position }}</td>
                       <td>{{ $collaborator->phone }}</td>
-                      <td>JUNIN</td>                      
+                      <td>{{ $collaborator->department->name }}</td>                    
                       <td>{{ $collaborator->company }}</td>
                       <td>{{ $collaborator->category }}</td>
                       <td>{{ $collaborator->ubigeo }}</td>
+                      <td>
+                        <a href="{{ url('collaborators/'. $collaborator->id) }}">
+                          <img class="img-circle img-sm" src="{{ Storage::url("collaborators/photo/$collaborator->photo") }}">
+                        </a>
+                      </td>
                       <td>
                         <form action="{{ url('/collaborators/'.$collaborator->id) }}" method="POST">
                             @csrf
@@ -88,7 +94,6 @@
                           </button>
                           <div class="dropdown-menu">
                             <a class="dropdown-item text-warning" href="{{ url('/collaborators/'.$collaborator->id.'/edit') }}" class="btn btn-m">Editar</a>
-                            <a class="dropdown-item text-info" href="#">foto</a>
                             <a class="dropdown-item text-purple" href="#">EMO Chinalco</a>
                             <a class="dropdown-item text-pink" href="#">Imprimir EMO</a>
                           </div>
@@ -107,6 +112,30 @@
     </div>
 </div>
 
+<div class="modal fade" id="modal-default" style="display: block; padding-right: 17px;" aria-modal="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Default Modal</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>One fine body…</p>
+      </div>
+      <div class="modal-footer justify-content-between">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
 
+@endsection
 
+@section('foto')
+<script src="{{ asset('js/indexcolaborador.js') }}"></script>
 @endsection
