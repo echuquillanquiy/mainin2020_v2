@@ -119,7 +119,9 @@
                         <div class="form-group col-sm-12 col-lg-2 col-xl-2 col-s-12">
                           <label for="ubigeo_id">Ubigeo</label>
                           <select class="form-control select2" name="ubigeo_id" id="select-ubigeo">
-
+                            @foreach ($ubigeos as $ubigeo)
+                            <option value="{{ $ubigeo->id }}">{{ $ubigeo->distrito }}</option>
+                            @endforeach
                           </select>
                         </div>
 
@@ -293,28 +295,28 @@
                         </div>
 
                         <div class="form-group col-md-6 col-lg-2 col-xl-2 col-s-12">
-                          <label for="weight">Peso</label>
-                          <input type="text" name="weight" class="form-control">
+                          <label for="height">Talla</label>
+                          <input type="number" name="height" id="talla" class="form-control" onchange="calcularImc();" placeholder="Talla" value="{{ old('height') }}">
                         </div>
 
                         <div class="form-group col-md-6 col-lg-2 col-xl-2 col-s-12">
-                          <label for="height">Talla</label>
-                          <input type="text" name="height" class="form-control">
+                          <label for="weight">Peso</label>
+                          <input type="number" name="weight" id="peso" class="form-control" onchange="calcularImc();" placeholder="Peso" value="{{ old('weight') }}">
                         </div>
 
                         <div class="form-group col-md-6 col-lg-2 col-xl-2 col-s-12">
                           <label for="imc">IMC</label>
-                          <input type="text" name="imc" class="form-control">
+                          <textarea id="imc" class="form-control" name="imc" rows="1" cols="0" readonly>{{ old('imc') }}</textarea>
                         </div>
 
                         <div class="form-group col-md-6 col-lg-2 col-xl-2 col-s-12">
                           <label for="dx_nutrition">Dx Nutrición</label>
-                          <input type="text" name="dx_nutrition" class="form-control">
+                          <textarea id="dx_nutrition" class="form-control" name="dx_nutrition" rows="1" readonly>{{ old('dx_nutrition') }}</textarea>
                         </div>
 
                         <div class="form-group col-md-6 col-lg-4 col-xl-4 col-s-12">
                           <label for="especialty">Especialidad</label>
-                          <input type="text" name="especialty" class="form-control">
+                          <input type="text" name="especialty" class="form-control" value="{{ old('especialty') }}">
                         </div>
 
                         <div class="form-group col-sm-12 col-lg-3 col-xl-3 col-s-12">
@@ -339,12 +341,12 @@
 
                         <div class="form-group col-md-6 col-lg-3 col-xl-3 col-s-12">
                           <label for="induction_place">Lugar de inducción</label>
-                          <input type="text" name="induction_place" class="form-control">
+                          <input type="text" name="induction_place" class="form-control" value="{{ old('induction_place') }}">
                         </div>
 
                         <div class="form-group col-md-6 col-lg-3 col-xl-3 col-s-12">
                           <label for="medic_center">Centro médico</label>
-                          <input type="text" name="medic_center" class="form-control">
+                          <input type="text" name="medic_center" class="form-control" value="{{ old('medic_center') }}">
                         </div>
                         
                         <div class="form-group col-md-6 col-lg-3 col-xl-3 col-s-12">
@@ -390,12 +392,12 @@
                         
                         <div class="form-group col-12 col-sm-12 col-md-5 col-xl-5 col-lg-5">
                           <label>Observaciones</label>
-                          <textarea name="observations" id="observations" rows="1" class="form-control"></textarea>
+                          <textarea name="observations" id="observations" rows="1" class="form-control">{{ old('observations') }}</textarea>
                         </div>
 
                         <div class="form-group col-12 col-sm-12 col-md-4 col-xl-4 col-lg-4">
                           <label>Comentarios</label>
-                          <textarea name="comments" id="comments" rows="1" class="form-control"></textarea>
+                          <textarea name="comments" id="comments" rows="1" class="form-control">{{ old('comments') }}</textarea>
                         </div>
 
                         <div class="col-5">
@@ -424,4 +426,5 @@
     <script src="{{ asset('bootstrap-fileinput/themes/fas/theme.min.js') }}"></script>
     <script src="{{ asset('js/photo.js') }}"></script>
     <script src="{{ asset('js/province.js') }}"></script>
+    <script src="{{ asset('js/imc.js') }}"></script>
 @endsection

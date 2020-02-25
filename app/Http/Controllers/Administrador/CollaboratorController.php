@@ -101,7 +101,15 @@ class CollaboratorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $collaborator = Collaborator::findOrFail($id); 
+        if($photo = Collaborator::setPhoto($request->photo_up))
+            $request->request->add(['photo' => $photo]);
+        $data = $request->all();
+
+        $collaborator->fill($data);
+        $collaborator->save();
+        $notification = 'El colaborador se ha registrado correctamente.';
+        return redirect('/collaborators')->with(compact('notification'));
     }
 
     /**
@@ -112,6 +120,6 @@ class CollaboratorController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
     }
 }

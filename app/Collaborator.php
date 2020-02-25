@@ -29,7 +29,7 @@ class Collaborator extends Model
 
         'district_id',
 
-        'ubigeo_cod',
+        'ubigeo_id',
 
 
         'position',
@@ -95,6 +95,11 @@ class Collaborator extends Model
     public function ubigeo()
     {
         return $this->belongsTo(Ubigeo::class)->withDefault();
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class)->withDefault();
     }
 
     public static function setPhoto($photo, $actual = false)

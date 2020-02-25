@@ -57,7 +57,7 @@
                       <td>{{ $collaborator->department->name }}</td>                    
                       <td>{{ $collaborator->company }}</td>
                       <td>{{ $collaborator->category }}</td>
-                      <td>{{ $collaborator->ubigeo }}</td>
+                      <td>{{ $collaborator->ubigeo->ubigeo_cod}}</td>
                       <td>
                         <a href="{{ url('collaborators/'. $collaborator->id) }}" class="ver-foto">
                           <img class="img-circle img-sm" src="{{ Storage::url("collaborators/photo/$collaborator->photo") }}" alt="Foto Colaborador">

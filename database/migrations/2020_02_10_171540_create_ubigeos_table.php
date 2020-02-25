@@ -17,7 +17,7 @@ class CreateUbigeosTable extends Migration
             $table->bigIncrements('id');
             $table->string('ubigeo_cod');
             $table->string('distrito');
-            $table->string('provincia');
+            $table->string('provincia'); 
             $table->string('departamento');
         });
     }
