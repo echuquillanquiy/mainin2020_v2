@@ -77,6 +77,11 @@ class Collaborator extends Model
         'photo'
     ];
 
+    public function user()
+    {
+        return $this->belongsTo(User::class)->withDefault();
+    }
+
     public function department()
     {
         return $this->belongsTo(Department::class)->withDefault();

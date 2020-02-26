@@ -118,8 +118,12 @@ class CollaboratorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Collaborator $collaborator)
     {
-        
+        $collaboratorName = $collaborator->name;
+        $collaborator->delete();
+
+        $notification = "El colaborador $collaboratorName se ha eliminado correctamente.";
+        return redirect('/collaborators')->with(compact('notification'));
     }
 }

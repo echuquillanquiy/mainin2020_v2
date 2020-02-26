@@ -48,7 +48,7 @@
                 <tbody>
                   @foreach ($collaborators as $collaborator)
                     <tr>
-                      <td>{{ $collaborator->interviewer }}</td>
+                      <td>{{ $collaborator->user->nickname }}</td>
                       <td>{{ $collaborator->document }}</td>
                       <td>{{ $collaborator->n_document }}</td>
                       <td>{{ $collaborator->name }}</td>
