@@ -102,7 +102,7 @@ class CollaboratorController extends Controller
     public function update(Request $request, $id)
     {
         $collaborator = Collaborator::findOrFail($id); 
-        if($photo = Collaborator::setPhoto($request->photo_up))
+        if($photo = Collaborator::setPhoto($request->photo_up, $collaborator->photo))
             $request->request->add(['photo' => $photo]);
         $data = $request->all();
 
@@ -122,6 +122,8 @@ class CollaboratorController extends Controller
     {
         $collaboratorName = $collaborator->name;
         $collaborator->delete();
+        Storage::disk('public')->delete("collaborators/photo/$collaborator->photo");
+
 
         $notification = "El colaborador $collaboratorName se ha eliminado correctamente.";
         return redirect('/collaborators')->with(compact('notification'));
