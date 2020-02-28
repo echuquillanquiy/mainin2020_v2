@@ -117,10 +117,10 @@
                         </div>
 
                         <div class="form-group col-sm-12 col-lg-2 col-xl-2 col-s-12">
-                          <label for="ubigeo_id">Ubigeo</label>
-                          <select class="form-control select2" name="ubigeo_id" id="select-ubigeo">
+                          <label for="ubigeo_cod">Ubigeo</label>
+                          <select class="form-control select2" name="ubigeo_cod" id="select-ubigeo">
                             @foreach ($ubigeos as $ubigeo)
-                            <option value="{{ $ubigeo->id }}">{{ $ubigeo->distrito }}</option>
+                            <option value="{{ $ubigeo->ubigeo_cod }}">{{ $ubigeo->distrito }}</option>
                             @endforeach
                           </select>
                         </div>

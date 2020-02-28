@@ -16,11 +16,23 @@
               @endif
     
               <div class="card-tools">
-                <div class="input-group input-group-sm" style="width: 250px;">
-                    <a href="{{ route('collaborators.create') }}" class="btn btn-block btn-primary float-right text-white">
-                    <i class="fas fa-user-tie fa-2x mr-2"></i>
-                    <span class="mt--5">Nuevo Colaborador</span>
-                  </a>
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="input-group input-group-sm" style="width: 250px;">
+                        <a href="{{ route('collaborators.create') }}" class="btn btn-block btn-primary float-right text-white">
+                        <i class="fas fa-user-tie fa-2x mr-2"></i>
+                        <span class="mt--5">Nuevo Colaborador</span>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="input-group input-group-sm" style="width: 250px;">
+                        <a href="{{ route('collaborators.import.excel') }}" class="btn btn-block btn-info float-right text-white">
+                        <i class="fas fa-file-import fa-2x"></i>
+                        <span class="mt--5">Importar data</span>
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

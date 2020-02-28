@@ -35,8 +35,7 @@ class CreateCollaboratorsTable extends Migration
             $table->unsignedBigInteger('district_id')->nullable();
             $table->foreign('district_id')->references('id')->on('districts');
 
-            $table->unsignedBigInteger('ubigeo_id')->nullable();
-            $table->foreign('ubigeo_id')->references('id')->on('ubigeos');
+            $table->string('ubigeo_cod')->nullable();
 
             $table->string('position',50)->nullable();
 

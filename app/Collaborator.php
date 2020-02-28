@@ -11,9 +11,6 @@ class Collaborator extends Model
 {
     protected $fillable = [
 
-        'collaborators',
-        'id',
-
         'user_id',
         'interviewer',
 
@@ -29,7 +26,7 @@ class Collaborator extends Model
 
         'district_id',
 
-        'ubigeo_id',
+        'ubigeo_cod',
 
 
         'position',

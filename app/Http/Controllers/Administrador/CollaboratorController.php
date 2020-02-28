@@ -128,4 +128,9 @@ class CollaboratorController extends Controller
         $notification = "El colaborador $collaboratorName se ha eliminado correctamente.";
         return redirect('/collaborators')->with(compact('notification'));
     }
+
+    public function importData()
+    {
+        
+    }
 }
