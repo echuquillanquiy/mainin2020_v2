@@ -27,9 +27,9 @@
                   </div>
                   <div class="col-lg-6">
                     <div class="input-group input-group-sm" style="width: 250px;">
-                        <a href="{{ route('collaborators.import.excel') }}" class="btn btn-block btn-info float-right text-white">
-                        <i class="fas fa-file-import fa-2x"></i>
-                        <span class="mt--5">Importar data</span>
+                        <a href="{{ url('exportexcel') }}" class="btn btn-block btn-info float-right text-white">
+                          <i class="fas fa-file-excel fa-2x"></i>
+                        <span class="mt--5">Exportar data</span>
                       </a>
                     </div>
                   </div>

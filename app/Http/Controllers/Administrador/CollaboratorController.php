@@ -13,16 +13,17 @@ use App\Area;
 use App\Position;
 use App\Company;
 use Illuminate\Support\Facades\Storage;
-
+use App\Exports\CollaboratorsExport;
+use Maatwebsite\Excel\Facades\Excel;
 use Redirect,Response;
 
 class CollaboratorController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function export() 
+    {
+        return Excel::download(new CollaboratorsExport, 'collaborador.xlsx');
+    }
+
     public function index()
     {
         $collaborators = Collaborator::orderBy('name', 'asc')->paginate(25);
