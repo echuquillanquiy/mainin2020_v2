@@ -14,11 +14,19 @@ use App\Position;
 use App\Company;
 use Illuminate\Support\Facades\Storage;
 use App\Exports\CollaboratorsExport;
+use App\Imports\CollaboratorsImport;
 use Maatwebsite\Excel\Facades\Excel;
 use Redirect,Response;
 
 class CollaboratorController extends Controller
 {
+    public function import() 
+    {
+        Excel::import(new CollaboratorsImport, 'colaborador.xlsx');
+        
+        return redirect('/')->with('success', 'Se cago la información con exito!');
+    }
+
     public function export() 
     {
         return Excel::download(new CollaboratorsExport, 'collaborador.xlsx');

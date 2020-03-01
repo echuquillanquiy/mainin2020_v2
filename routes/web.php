@@ -21,5 +21,5 @@ Route::middleware(['auth', 'administrador'])->namespace('Administrador')->group(
     Route::resource('collaborators', 'CollaboratorController');
     Route::post('/collaborators/{collaborator}', 'CollaboratorController@show')->name('ver-foto');
     Route::get('collabortors/export/', 'CollaboratorController@export')->name('exportexcel');
-    Route::post('/import-data-excel', 'CollaboratorController@importData')->name('collaborators.import.excel');
+    Route::post('collabortors/import/', 'CollaboratorController@import')->name('importexcel');
 });

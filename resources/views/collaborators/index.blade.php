@@ -27,7 +27,7 @@
                   </div>
                   <div class="col-lg-6">
                     <div class="input-group input-group-sm" style="width: 250px;">
-                        <a href="{{ url('exportexcel') }}" class="btn btn-block btn-info float-right text-white">
+                        <a href="{{ route('exportexcel') }}" class="btn btn-block btn-info float-right text-white">
                           <i class="fas fa-file-excel fa-2x"></i>
                         <span class="mt--5">Exportar data</span>
                       </a>
