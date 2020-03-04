@@ -42,9 +42,9 @@ class CreateCollaboratorsTable extends Migration
             $table->string('company',100)->nullable();
 
             $table->string('name')->nullable();
-            $table->string('document', 15)->nullable();
+            $table->string('document', 25)->nullable();
             $table->string('n_document', 20)->nullable();
-            $table->date('date_of_birthday')->nullable();
+            $table->datetime('date_of_birthday')->nullable();
             $table->string('phone', 9)->nullable();
             $table->string('address')->nullable();
             $table->date('date_medic_examen')->nullable();
@@ -78,8 +78,8 @@ class CreateCollaboratorsTable extends Migration
             $table->text('comments')->nullable();
             $table->string('medium', 50)->nullable();
             $table->date('date_up_obs')->nullable();
-            $table->string('state')->default('ACEPTADO');
-            $table->string('photo');
+            $table->string('state')->default('ACEPTADO')->nullable();
+            $table->string('photo')->nullable();
             
             $table->timestamps();
         });

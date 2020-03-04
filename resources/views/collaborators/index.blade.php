@@ -17,7 +17,7 @@
     
               <div class="card-tools">
                 <div class="row">
-                  <div class="col-lg-6">
+                  <div class="col-12 col-lg-6">
                     <div class="input-group input-group-sm" style="width: 250px;">
                         <a href="{{ route('collaborators.create') }}" class="btn btn-block btn-primary float-right text-white">
                         <i class="fas fa-user-tie fa-2x mr-2"></i>
@@ -25,7 +25,7 @@
                       </a>
                     </div>
                   </div>
-                  <div class="col-lg-6">
+                  <div class="col-12 col-lg-6">
                     <div class="input-group input-group-sm" style="width: 250px;">
                         <a href="{{ route('exportexcel') }}" class="btn btn-block btn-info float-right text-white">
                           <i class="fas fa-file-excel fa-2x"></i>
@@ -60,7 +60,7 @@
                 <tbody>
                   @foreach ($collaborators as $collaborator)
                     <tr>
-                      <td>{{ $collaborator->user->nickname }}</td>
+                      <td>{{ $collaborator->interviewer }}</td>
                       <td>{{ $collaborator->document }}</td>
                       <td>{{ $collaborator->n_document }}</td>
                       <td>{{ $collaborator->name }}</td>
@@ -69,11 +69,18 @@
                       <td>{{ $collaborator->department->name }}</td>                    
                       <td>{{ $collaborator->company }}</td>
                       <td>{{ $collaborator->category }}</td>
-                      <td>{{ $collaborator->ubigeo->ubigeo_cod}}</td>
+                      <td>{{ $collaborator->ubigeo_cod}}</td>
                       <td>
-                        <a href="{{ url('collaborators/'. $collaborator->id) }}" class="ver-foto">
-                          <img class="img-circle img-sm" src="{{ Storage::url("collaborators/photo/$collaborator->photo") }}" alt="Foto Colaborador">
-                        </a>
+                         @if($collaborator->photo == null)
+                            <a href="#">
+                              <img class="img-circle img-sm" src="{{ Storage::url("collaborators/photo/fotoprueba.png") }}" alt="Foto Colaborador">
+                            </a>
+                         @else
+
+                          <a href="{{ url('collaborators/'. $collaborator->id) }}" class="ver-foto">
+                            <img class="img-circle img-sm" src="{{ Storage::url("collaborators/photo/$collaborator->photo") }}" alt="Foto Colaborador">
+                          </a>
+                        @endif
                       </td>
                       <td>
                         <form action="{{ url('/collaborators/'.$collaborator->id) }}" method="POST">

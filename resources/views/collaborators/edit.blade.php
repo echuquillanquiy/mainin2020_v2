@@ -119,7 +119,7 @@
 
                         <div class="form-group col-sm-12 col-lg-2 col-xl-2 col-s-12">
                           <label for="ubigeo">Lugar de Nacimiento</label>
-                          <select class="form-control select2" name="ubigeo_id">
+                          <select class="form-control select2" name="ubigeo_cod">
                           <option value="{{ $collaborators->ubigeo_cod }}">{{ $collaborators->ubigeo_cod }}</option>
                             @foreach ($ubigeos as $ubigeo)
                               <option value="{{ $ubigeo->ubigeo_cod }}">{{ $ubigeo->distrito }}</option>

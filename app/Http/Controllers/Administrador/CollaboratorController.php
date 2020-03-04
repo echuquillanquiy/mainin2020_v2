@@ -20,21 +20,27 @@ use Redirect,Response;
 
 class CollaboratorController extends Controller
 {
-    public function import() 
+    public function importData()
     {
-        Excel::import(new CollaboratorsImport, 'colaborador.xlsx');
-        
-        return redirect('/')->with('success', 'Se cago la información con exito!');
+        return view('collaborators.importardata');
+    }
+
+    public function import(Request $request) 
+    {
+        $file = $request->file('file');
+        Excel::import(new CollaboratorsImport, $file);        
+        $notification = 'Los datos se subieron correctamente.';
+        return redirect('/collaborators')->with(compact('notification'));
     }
 
     public function export() 
     {
-        return Excel::download(new CollaboratorsExport, 'collaborador.xlsx');
+        return Excel::download(new CollaboratorsExport, 'colaborador.xlsx');
     }
 
     public function index()
     {
-        $collaborators = Collaborator::orderBy('name', 'asc')->paginate(25);
+        $collaborators = Collaborator::orderBy('created_at', 'asc')->paginate(25);
         return view('collaborators.index', compact('collaborators'));
     }
 
@@ -136,10 +142,5 @@ class CollaboratorController extends Controller
 
         $notification = "El colaborador $collaboratorName se ha eliminado correctamente.";
         return redirect('/collaborators')->with(compact('notification'));
-    }
-
-    public function importData()
-    {
-        
     }
 }

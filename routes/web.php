@@ -20,6 +20,7 @@ Route::middleware(['auth', 'administrador'])->namespace('Administrador')->group(
 
     Route::resource('collaborators', 'CollaboratorController');
     Route::post('/collaborators/{collaborator}', 'CollaboratorController@show')->name('ver-foto');
-    Route::get('collabortors/export/', 'CollaboratorController@export')->name('exportexcel');
-    Route::post('collabortors/import/', 'CollaboratorController@import')->name('importexcel');
+    Route::get('export', 'CollaboratorController@export')->name('exportexcel');
+    Route::get('importardata', 'CollaboratorController@importData')->name('dataimport');
+    Route::post('import-data', 'CollaboratorController@import')->name('importexcel');
 });

@@ -123,9 +123,9 @@
           </li>
 
           <li class="nav-item">
-            <a href="/reports" class="nav-link">
+            <a href="{{ route('dataimport') }}" class="nav-link">
               <i class="nav-icon fas fa-chart-pie text-fuchsia"></i>
-              <p>Reportes</p>
+              <p>Carga Masiva</p>
             </a>
           </li>
         </ul>
