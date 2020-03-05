@@ -15,7 +15,7 @@ class CreateCollaboratorsTable extends Migration
     {
         Schema::create('collaborators', function (Blueprint $table) {
             $table->bigIncrements('id');
-            
+
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('interviewer', 100)->nullable();
@@ -25,15 +25,18 @@ class CreateCollaboratorsTable extends Migration
             $table->string('amount')->nullable();
 
             $table->string('area')->nullable();
-            
+
             $table->unsignedBigInteger('department_id')->nullable();
             $table->foreign('department_id')->references('id')->on('departments');
+            $table->string('departamento')->nullable();
 
             $table->unsignedBigInteger('province_id')->nullable();
             $table->foreign('province_id')->references('id')->on('provinces');
+            $table->string('provincia')->nullable();
 
             $table->unsignedBigInteger('district_id')->nullable();
             $table->foreign('district_id')->references('id')->on('districts');
+            $table->string('distrito')->nullable();
 
             $table->string('ubigeo_cod')->nullable();
 
@@ -80,7 +83,7 @@ class CreateCollaboratorsTable extends Migration
             $table->date('date_up_obs')->nullable();
             $table->string('state')->default('ACEPTADO')->nullable();
             $table->string('photo')->nullable();
-            
+
             $table->timestamps();
         });
     }

@@ -51,7 +51,7 @@
                           <label for="name">Nombres y Apellidos</label>
                         <input type="text" name="name" class="form-control" id="name" value="{{ old('name', $collaborators->name) }}">
                         </div>
-                        
+
                         <div class="form-group col-sm-12 col-lg-3 col-xl-3 col-s-12">
                           <label for="date_of_birthday">Fecha de nacimiento</label>
                           <div class="input-group">
@@ -96,7 +96,11 @@
                         <div class="form-group col-md-6 col-lg-2 col-xl-2 col-s-12">
                           <label for="department_id">Departamento</label>
                           <select class="form-control select2" data-style="btn-success" name="department_id" id="select-department">
-                            <option value="{{ $collaborators->department->id }}" disabled selected>{{ $collaborators->department->name }}</option>
+                            @if($collaborators->department_id != null)
+                                  <option value="{{ $collaborators->department->id }}" disabled selected>{{ $collaborators->department->name }}</option>
+                            @else
+                                  <option value="{{ $collaborators->departamento }}" disabled selected>{{ $collaborators->departamento }}</option>
+                            @endif
                             @foreach ($departments as $department)
                               <option value="{{ $department->id }}">{{ $department->name }}</option>
                             @endforeach
@@ -106,19 +110,28 @@
                         <div class="form-group col-sm-12 col-lg-2 col-xl-2 col-s-12">
                           <label for="province_id">Provincia</label>
                           <select class="form-control select2" name="province_id" id="select-province">
-                            <option value="{{ $collaborators->province->id }}" disabled selected>{{ $collaborators->province->name }}</option>
+                              @if($collaborators->province_id != null)
+                                  <option value="{{ $collaborators->province->id }}" disabled selected>{{ $collaborators->province->name }}</option>
+                              @else
+                                  <option value="{{ $collaborators->provincia }}" disabled selected>{{ $collaborators->provincia }}</option>
+                              @endif
                           </select>
                         </div>
 
                         <div class="form-group col-sm-12 col-lg-2 col-xl-2 col-s-12">
                           <label for="district_id">Distrito</label>
                           <select class="form-control select2" name="district_id" id="select-district">
-                            <option value="{{ $collaborators->district->id }}">{{ $collaborators->district->name }}</option>
+                              @if($collaborators->district_id != null)
+                                  <option value="{{ $collaborators->district->id }}">{{ $collaborators->district->name }}</option>
+                              @else
+                                  <option value="{{ $collaborators->distrito }}" disabled selected>{{ $collaborators->distrito }}</option>
+                              @endif
+
                           </select>
                         </div>
 
                         <div class="form-group col-sm-12 col-lg-2 col-xl-2 col-s-12">
-                          <label for="ubigeo">Lugar de Nacimiento</label>
+                          <label for="ubigeo">Ubigeo</label>
                           <select class="form-control select2" name="ubigeo_cod">
                           <option value="{{ $collaborators->ubigeo_cod }}">{{ $collaborators->ubigeo_cod }}</option>
                             @foreach ($ubigeos as $ubigeo)
@@ -199,7 +212,7 @@
                           <label for="bancary_account">Cuenta bancaria</label>
                           <input type="text" name="bancary_account" id="bancary_account" class="form-control" value="{{ old('bancary_account', $collaborators->bancary_account) }}">
                         </div>
-                        
+
                      </div>
                   </div>
                   <div class="tab-pane fade" id="custom-tabs-three-profile" role="tabpanel" aria-labelledby="custom-tabs-three-profile-tab">
@@ -362,7 +375,7 @@
                           <label for="medic_center">Centro médico</label>
                           <input type="text" name="medic_center" class="form-control" value="{{ old('induction_place', $collaborators->medic_center) }}">
                         </div>
-                        
+
                         <div class="form-group col-md-6 col-lg-3 col-xl-3 col-s-12">
                           <label for="medic_aptitud">APTITUD MEDICA</label>
                           <select class="form-control select2" data-style="btn-success" name="medic_aptitud">
@@ -405,7 +418,7 @@
                           <input type="date" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask name="date_up_obs" id="date_up_obs" value="{{ old('date_up_obs', $collaborators->date_up_obs) }}">
                           </div>
                         </div>
-                        
+
                         <div class="form-group col-12 col-sm-12 col-md-5 col-xl-5 col-lg-5">
                           <label>Observaciones</label>
                           <textarea name="observations" id="observations" rows="1" class="form-control">{{ $collaborators->observations }}</textarea>
@@ -418,7 +431,7 @@
 
                         <div class="col-5">
                           <label for="photo1">Foto</label>
-                          <input type="file" name="photo_up" id="photo1" data-initial-preview="{{ Storage::url("collaborators/photo/$collaborators->photo") }}" accept="image/*" />                                    
+                          <input type="file" name="photo_up" id="photo1" data-initial-preview="{{ Storage::url("collaborators/photo/$collaborators->photo") }}" accept="image/*" />
                         </div>
                       </div>
                   </div>
@@ -427,11 +440,11 @@
               <!-- /.card -->
             </div>
         </div>
-        </div>        
+        </div>
         <button type="submit" class="btn btn-primary btn-lg">Actualizar</button>
         <a href="{{ url('collaborators') }}" class="btn btn-danger btn-lg text-white">Cancelar</a>
 
-    </form>   
+    </form>
 </div>
 
 @endsection

@@ -1,6 +1,6 @@
 @extends('layouts.panel')
 @section('content')
-      
+
 <div class="container-fluid mt-2">
     <div class="row">
         <div class="col-12">
@@ -14,7 +14,7 @@
                   {{ session('notification') }}
                 </div>
               @endif
-    
+
               <div class="card-tools">
                 <div class="row">
                   <div class="col-12 col-lg-6">
@@ -66,7 +66,11 @@
                       <td>{{ $collaborator->name }}</td>
                       <td>{{ $collaborator->position }}</td>
                       <td>{{ $collaborator->phone }}</td>
-                      <td>{{ $collaborator->department->name }}</td>                    
+                      @if($collaborator->department_id != null)
+                        <td>{{ $collaborator->department->name }}</td>
+                      @else
+                        <td>{{ $collaborator->departamento }}</td>
+                      @endif
                       <td>{{ $collaborator->company }}</td>
                       <td>{{ $collaborator->category }}</td>
                       <td>{{ $collaborator->ubigeo_cod}}</td>
@@ -85,26 +89,26 @@
                       <td>
                         <form action="{{ url('/collaborators/'.$collaborator->id) }}" method="POST">
                             @csrf
-                            @method('DELETE')  
+                            @method('DELETE')
                             <button class="btn btn-m" onclick="return confirm('¿Seguro que desea eliminar al colaborador: {{ $collaborator->name }}?');" type="submit"><i class="fas fa-times-circle fa-lg text-danger"></i></button>
                           </form>
                       </td>
 
                       <td>
                         @if($collaborator->state == "ACEPTADO")
-                            
+
                             <a href="url('collaborators/'. $collaborator->id) }}" id="" data-id="{{ $collaborator->id }}" data-toggle="tooltip" data-placement="top" title="Aceptado"  class="btn btn-sm cambiar-estado"><i class="fas fa-user-check fa-lg text-success"></i></a>
 
                         @elseif($collaborator->state == "BANEADO")
-                                
+
                             <a href="url('collaborators/'. $collaborator->id) }}" id="" data-id="{{ $collaborator->id }}" data-toggle="tooltip" data-placement="top" title="Baneado"  class="btn btn-sm cambiar-estado"><i class="fas fa-user-slash fa-lg text-danger"></i></a>
 
                         @elseif($collaborator->state == "OBSERVADO")
 
-                            <a href="url('collaborators/'. $collaborator->id) }}" id="" data-id="{{ $collaborator->id }}" data-toggle="tooltip" data-placement="top" title="Observado" class="btn btn-sm cambiar-estado"><i class="fas fa-exclamation-triangle fa-lg text-warning"></i></a>                                        
+                            <a href="url('collaborators/'. $collaborator->id) }}" id="" data-id="{{ $collaborator->id }}" data-toggle="tooltip" data-placement="top" title="Observado" class="btn btn-sm cambiar-estado"><i class="fas fa-exclamation-triangle fa-lg text-warning"></i></a>
                         @endif
                     </td>
-                    
+
                     <td>
                       <div class="input-group mb-3">
                         <div class="input-group-prepend">

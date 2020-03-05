@@ -21,13 +21,12 @@ class Collaborator extends Model
         'area',
 
         'department_id',
-
+        'departamento',
         'province_id',
-
+        'provincia',
         'district_id',
-
+        'distrito',
         'ubigeo_cod',
-
 
         'position',
 
@@ -119,7 +118,7 @@ class Collaborator extends Model
             });
             Storage::disk('public')->put("collaborators/photo/$photoName", $image->stream());
             return $photoName;
-        }else 
+        }else
         {
             return false;
         }
