@@ -2,26 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4aa59ffa-2d34-456c-9566-3c911d42e663" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/2020Mainin.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Collaborator.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Collaborator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Department.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Department.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Exports/CollaboratorsExport.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exports/CollaboratorsExport.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Imports/CollaboratorsImport.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Imports/CollaboratorsImport.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_10_174336_create_collaborators_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_10_174336_create_collaborators_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/collaborators/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/collaborators/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/collaborators/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/collaborators/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable />
@@ -170,14 +158,28 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1583445856918</updated>
-      <workItem from="1583445858239" duration="5545000" />
+      <workItem from="1583445858239" duration="6160000" />
+      <workItem from="1583506363029" duration="2083000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="E:/ProyectosAngular/node_modules/karma/config.tpl.js" />
+      </list>
+    </option>
   </component>
   <component name="WindowStateProjectService">
+    <state x="739" y="262" key="FileChooserDialogImpl" timestamp="1583508717292">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="739" y="262" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1583508717292" />
+    <state x="677" y="328" key="jetbrains.nodejs.interpreters-dialog" timestamp="1583508684547">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="677" y="328" key="jetbrains.nodejs.interpreters-dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583508684547" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1583451272897">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

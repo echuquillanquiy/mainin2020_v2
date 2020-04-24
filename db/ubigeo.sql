@@ -1873,3 +1873,4 @@ INSERT INTO `ubigeos` (`id`, `ubigeo_cod`, `distrito`, `provincia`, `departament
 	(1872, '250304', 'Neshuya', 'Padre Abad', 'Ucayali'),
 	(1873, '250305', 'Alexander von Humboldt', 'Padre Abad', 'Ucayali'),
 	(1874, '250401', 'Purus', 'Purus', 'Ucayali');
+medicalhedialnurses
