@@ -9,6 +9,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
+Route::middleware(['auth', 'administrador'])->namespace('Administrador')->group(function (){
 
     Route::resource('users', 'UserController');
     Route::resource('positions', 'PositionController');
@@ -22,3 +23,4 @@ Route::get('/home', 'HomeController@index')->name('home');
     Route::get('export', 'CollaboratorController@export')->name('exportexcel');
     Route::get('importardata', 'CollaboratorController@importData')->name('dataimport');
     Route::post('import-data', 'CollaboratorController@import')->name('importexcel');
+});
