@@ -36,7 +36,7 @@
           <div class="row">
             <div class="col-sm-8">
               <div class="nav-utility">
-                <span class="nav-item">A stylish Bootstrap theme for construction companies</span>
+                <h3 class=""><a href="{{ route('login') }}"><i class="fa fa-play-circle-o"></i> INGRESAR AL SISTEMA</a></h3>
               </div><!-- .nav-utility -->
             </div><!-- .col-sm-8 -->
             <div class="col-sm-4 hidden-xs">
