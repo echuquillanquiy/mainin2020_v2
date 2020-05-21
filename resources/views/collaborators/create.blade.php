@@ -97,7 +97,7 @@
                           <select class="form-control select2" data-style="btn-success" id="select-department" name="department_id">
                             <option>[SELECCIONE]</option>
                             @foreach ($departments as $department)
-                              <option value="{{ $department->id }}">{{ $department->name }}</option>
+                              <option value="{{ $department->id }}">{{ $department->id }}</option>
                             @endforeach
                           </select>
                         </div>
@@ -120,7 +120,7 @@
                           <label for="ubigeo_cod">Ubigeo</label>
                           <select class="form-control select2" name="ubigeo_cod" id="select-ubigeo">
                             @foreach ($ubigeos as $ubigeo)
-                            <option value="{{ $ubigeo->ubigeo_cod }}">{{ $ubigeo->distrito }}</option>
+                            <option value="{{ $ubigeo->ubigeo_cod }}">{{ $ubigeo->ubigeo_cod }}</option>
                             @endforeach
                           </select>
                         </div>
