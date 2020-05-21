@@ -77,7 +77,7 @@
                       <td>
                          @if($collaborator->photo == null)
                             <a href="#">
-                              <img class="img-circle img-sm" src="{{ asset('storage/collaborators/photo/fotoprueba.png') }}" alt="Foto Colaborador">
+                              <img class="img-circle img-sm" src="{{ asset('colaborador/fotoprueba.png') }}" alt="Foto Colaborador">
                             </a>
                          @else
 
