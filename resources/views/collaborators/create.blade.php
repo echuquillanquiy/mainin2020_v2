@@ -97,7 +97,7 @@
                           <select class="form-control select2" data-style="btn-success" id="select-department" name="department_id">
                             <option>[SELECCIONE]</option>
                             @foreach ($departments as $department)
-                              <option value="{{ $department->id }}">{{ $department->id }}</option>
+                              <option value="{{ $department->id }}">{{ $department->name }}</option>
                             @endforeach
                           </select>
                         </div>
