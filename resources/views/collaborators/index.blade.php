@@ -44,7 +44,8 @@
                     <th>Entrevistador</th>
                     <th>Documento</th>
                     <th>N° DNI</th>
-                    <th>Nombres y apellidos</th>
+                    <th>Nombres</th>
+                    <th>Apellidos</th>
                     <th>Cargo</th>
                     <th>Telefóno</th>
                     <th>Departamento</th>
@@ -64,6 +65,7 @@
                       <td>{{ $collaborator->document }}</td>
                       <td>{{ $collaborator->n_document }}</td>
                       <td>{{ $collaborator->name }}</td>
+                      <td>{{ $collaborator->last_name }}</td>
                       <td>{{ $collaborator->position }}</td>
                       <td>{{ $collaborator->phone }}</td>
                       @if($collaborator->department_id != null)

@@ -47,11 +47,16 @@
                           <input type="text" class="form-control" name="n_document">
                         </div>
 
-                        <div class="form-group col-sm-12 col-lg-5 col-xl-5 col-s-12">
-                          <label for="name">Nombres y Apellidos</label>
+                        <div class="form-group col-sm-12 col-lg-2 col-xl-2 col-s-12">
+                          <label for="name">Nombres</label>
                         <input type="text" name="name" class="form-control" id="name" value="{{ old('name') }}">
                         </div>
                         
+                        <div class="form-group col-sm-12 col-lg-3 col-xl-3 col-s-12">
+                          <label for="last_name">Apellidos</label>
+                        <input type="text" name="last_name" class="form-control" id="last_name" value="{{ old('last_name') }}">
+                        </div>
+
                         <div class="form-group col-sm-12 col-lg-3 col-xl-3 col-s-12">
                           <label for="date_of_birthday">Fecha de nacimiento</label>
                           <div class="input-group">

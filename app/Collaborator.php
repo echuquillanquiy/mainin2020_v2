@@ -33,6 +33,7 @@ class Collaborator extends Model
         'company',
 
         'name',
+        'last_name',
         'document',
         'n_document',
         'date_of_birthday',

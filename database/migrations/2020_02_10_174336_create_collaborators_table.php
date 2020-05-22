@@ -45,9 +45,10 @@ class CreateCollaboratorsTable extends Migration
             $table->string('company',100)->nullable();
 
             $table->string('name')->nullable();
+            $table->string('last_name')->nullable();
             $table->string('document', 25)->nullable();
             $table->string('n_document', 20)->nullable();
-            $table->datetime('date_of_birthday')->nullable();
+            $table->date('date_of_birthday')->nullable();
             $table->string('phone', 9)->nullable();
             $table->string('address')->nullable();
             $table->date('date_medic_examen')->nullable();
