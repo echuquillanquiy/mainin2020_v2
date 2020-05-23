@@ -20,5 +20,14 @@ class UsersTableSeeder extends Seeder
 	        'dni' => '46589634',
 	        'role' => 'administrador'
     	]);
+
+        User::create([
+            'name' => 'Milagros Talleod',
+            'nickname' => 'mtalledo',
+            'email' => 'm.talledo@mainin.com.pe',
+            'password' => bcrypt('12345678'),
+            'dni' => '00112211',
+            'role' => 'administrador'
+        ]);
     }
 }

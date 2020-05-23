@@ -25,6 +25,7 @@ class CollaboratorsImport implements WithHeadingRow, ToCollection
                 'n_document'        => $row['n_documento'],
                 'name'              => $row['nombres'],
                 'last_name'         => $row['apellidos'],
+                'date_of_birthday'  => $row['fecha_nacimiento'],
                 'instruction'       => $row['grado_instruccion'],
                 'phone'             => $row['n_celular'],
                 'address'           => $row['direccion'],

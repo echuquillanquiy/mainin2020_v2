@@ -49,7 +49,7 @@ class CreateCollaboratorsTable extends Migration
             $table->string('document', 25)->nullable();
             $table->string('n_document', 20)->nullable();
             $table->date('date_of_birthday')->nullable();
-            $table->string('phone', 9)->nullable();
+            $table->string('phone', 50)->nullable();
             $table->string('address')->nullable();
             $table->date('date_medic_examen')->nullable();
             $table->text('observations')->nullable();
@@ -69,7 +69,7 @@ class CreateCollaboratorsTable extends Migration
             $table->string('n_sons',4)->nullable();
             $table->string('emergency_phone',9)->nullable();
             $table->string('contact',50)->nullable();
-            $table->string('home_time',8)->nullable();
+            $table->string('home_time',50)->nullable();
             $table->string('instruction', 50)->nullable();
             $table->string('especialty',50)->nullable();
             $table->string('bancary_account', 20)->nullable();
