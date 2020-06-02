@@ -53,8 +53,8 @@
                         </div>
 
                         <div class="form-group col-sm-12 col-lg-3 col-xl-3 col-s-12">
-                          <label for="last_name">Apellidos</label>
-                        <input type="text" name="last_name" class="form-control" id="last_name" value="{{ old('last_name', $collaborators->last_name) }}">
+                          <label for="lastname">Apellidos</label>
+                        <input type="text" name="lastname" class="form-control" id="lastname" value="{{ old('lastname', $collaborators->lastname) }}">
                         </div>
 
 

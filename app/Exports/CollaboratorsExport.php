@@ -19,9 +19,9 @@ class CollaboratorsExport implements FromQuery, WithMapping, WithHeadings,Should
         return Collaborator::select(
             'interviewer',
             'document',
-            'n_document',
+            'ndocument',
             'name',
-            'last_name',
+            'lastname',
             'date_of_birthday',
             'instruction',
             'phone',
@@ -73,9 +73,9 @@ class CollaboratorsExport implements FromQuery, WithMapping, WithHeadings,Should
         return [
             $collaborator->interviewer,
             $collaborator->document,
-            $collaborator->n_document,
+            $collaborator->ndocument,
             $collaborator->name,
-            $collaborator->last_name,
+            $collaborator->lastname,
             $collaborator->date_of_birthday,
             $collaborator->instruction,
             $collaborator->phone,

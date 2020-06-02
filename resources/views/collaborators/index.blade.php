@@ -36,6 +36,37 @@
                 </div>
               </div>
             </div>
+
+            <div class="card-body">
+              <form action="{{ url('collaborators') }}" method="GET">
+                <div class="row">
+                  <div class="col-lg-3">
+                    <div class="form-group">
+                      <label for="name">Nombres</label>
+                      <input type="text" name="name" class="form-control" value="{{ old('name') }}" autofocus>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-3">
+                    <div class="form-group">
+                      <label for="lastname">Apellidos</label>
+                      <input type="text" name="lastname" class="form-control" value="{{ old('lastname') }}">
+                    </div>
+                  </div> 
+          
+                  <div class="col-lg-3">
+                    <div class="form-group">
+                      <label for="ndocument">DNI</label>
+                      <input type="text" name="ndocument" class="form-control" value="{{ old('ndocument') }}">
+                    </div>
+                  </div>
+                  
+                  <div class="col-lg-3 mt-4">
+                    <button class="btn btn-info btn-lg" style="margin-top: 3px" type="submit">Buscar</button>
+                  </div>
+                </div>
+              </form>
+            </div>
             <!-- /.card-header -->
             <div class="card-body table-responsive p-0">
               <table class="table table-hover text-center text-nowrap">
@@ -63,9 +94,9 @@
                     <tr>
                       <td>{{ $collaborator->interviewer }}</td>
                       <td>{{ $collaborator->document }}</td>
-                      <td>{{ $collaborator->n_document }}</td>
+                      <td>{{ $collaborator->ndocument }}</td>
                       <td>{{ $collaborator->name }}</td>
-                      <td>{{ $collaborator->last_name }}</td>
+                      <td>{{ $collaborator->lastname }}</td>
                       <td>{{ $collaborator->position }}</td>
                       <td>{{ $collaborator->phone }}</td>
                       @if($collaborator->department_id != null)
@@ -132,7 +163,7 @@
             </div>
             <!-- /.card-body -->
           </div>
-          {{$collaborators->links()}}
+          {{$collaborators->appends($_GET)->links()}}
         </div>
     </div>
 </div>

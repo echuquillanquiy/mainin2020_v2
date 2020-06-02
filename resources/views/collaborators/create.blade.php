@@ -43,8 +43,8 @@
                         </div>
 
                         <div class="form-group col-sm-12 col-lg-2 col-xl-2 col-s-12">
-                          <label for="n_document">N° de Documento</label>
-                          <input type="text" class="form-control" name="n_document">
+                          <label for="ndocument">N° de Documento</label>
+                          <input type="text" class="form-control" name="ndocument" value="{{ old('ndocument') }}">
                         </div>
 
                         <div class="form-group col-sm-12 col-lg-2 col-xl-2 col-s-12">
@@ -53,8 +53,8 @@
                         </div>
                         
                         <div class="form-group col-sm-12 col-lg-3 col-xl-3 col-s-12">
-                          <label for="last_name">Apellidos</label>
-                        <input type="text" name="last_name" class="form-control" id="last_name" value="{{ old('last_name') }}">
+                          <label for="lastname">Apellidos</label>
+                        <input type="text" name="lastname" class="form-control" id="lastname" value="{{ old('lastname') }}">
                         </div>
 
                         <div class="form-group col-sm-12 col-lg-3 col-xl-3 col-s-12">

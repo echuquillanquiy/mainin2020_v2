@@ -38,9 +38,17 @@ class CollaboratorController extends Controller
         return Excel::download(new CollaboratorsExport, 'colaborador.xlsx');
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $collaborators = Collaborator::orderBy('created_at', 'asc')->paginate(25);
+        $name = $request->get('name');
+        $lastname = $request->get('lastname');
+        $ndocument = $request->get('ndocument');
+
+        $collaborators = Collaborator::orderBy('created_at', 'asc')
+        ->name($name)
+        ->lastname($lastname)
+        ->ndocument($ndocument)
+        ->paginate(25);
         return view('collaborators.index', compact('collaborators'));
     }
 

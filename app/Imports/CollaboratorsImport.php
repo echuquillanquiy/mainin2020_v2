@@ -22,9 +22,9 @@ class CollaboratorsImport implements WithHeadingRow, ToCollection
             Collaborator::create([
                 'interviewer'       => $row['entrevistador'],
                 'document'          => $row['tipo_doc'],
-                'n_document'        => $row['n_documento'],
+                'ndocument'         => $row['n_documento'],
                 'name'              => $row['nombres'],
-                'last_name'         => $row['apellidos'],
+                'lastname'          => $row['apellidos'],
                 'date_of_birthday'  => $row['fecha_nacimiento'],
                 'instruction'       => $row['grado_instruccion'],
                 'phone'             => $row['n_celular'],

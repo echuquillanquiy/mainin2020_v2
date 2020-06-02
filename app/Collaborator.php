@@ -33,9 +33,9 @@ class Collaborator extends Model
         'company',
 
         'name',
-        'last_name',
+        'lastname',
         'document',
-        'n_document',
+        'ndocument',
         'date_of_birthday',
         'phone',
         'address',
@@ -123,5 +123,23 @@ class Collaborator extends Model
         {
             return false;
         }
+    }
+
+    public function scopeName($query, $name)
+    {
+        if($name)
+            return $query->where('name', 'LIKE', "%$name%");
+    }
+
+    public function scopeLastName($query, $lastname)
+    {
+        if($lastname)
+            return $query->where('lastname', 'LIKE', "%$lastname%");
+    }
+
+    public function scopeNdocument($query, $ndocument)
+    {
+        if($ndocument)
+            return $query->where('ndocument', 'LIKE', "%$ndocument%");
     }
 }
